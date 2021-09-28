@@ -30,7 +30,13 @@ const App = () => {
 	}, [dispatch]);
 	console.log(stories);
 
-	return <div className="App"></div>;
+	return (
+		<div className="App">
+			{stories.map((story) => (
+				<div>{story.title}</div>
+			))}
+		</div>
+	);
 };
 
 export default App;
