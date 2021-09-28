@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import "./App.css";
+import { useSelector, useDispatch } from "react-redux";
+import { addStories } from "./storiesSlice";
 
 const getRandomItems = (items) => {
 	const shuffledItems = items.sort(() => 0.5 - Math.random());
@@ -8,6 +10,9 @@ const getRandomItems = (items) => {
 };
 
 const App = () => {
+	const stories = useSelector((state) => state.stories);
+	const dispatch = useDispatch();
+
 	useEffect(() => {
 		fetch("https://hacker-news.firebaseio.com/v0/topstories.json")
 			.then((response) => response.json())
@@ -19,10 +24,11 @@ const App = () => {
 					)
 				);
 				Promise.all(storyFetches).then((stories) => {
-					console.log(stories);
+					dispatch(addStories(stories));
 				});
 			});
-	}, []);
+	}, [dispatch]);
+	console.log(stories);
 
 	return <div className="App"></div>;
 };
