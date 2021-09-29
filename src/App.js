@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./App.css";
 import { useSelector, useDispatch } from "react-redux";
 import { addStories } from "./storiesSlice";
@@ -27,18 +28,12 @@ const App = () => {
 				});
 			});
 	}, [dispatch]);
-	console.log(stories);
+	console.log("stories", stories);
 
 	return (
 		<div className="App">
-			<Home />
-			{stories.map((story) => (
-				<div>
-					{story.title}
-					{story.rul}
-					{story.timestamp}
-					{story.score}
-				</div>
+			{stories.map((story, index) => (
+				<Home story={story} key={index} />
 			))}
 		</div>
 	);

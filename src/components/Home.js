@@ -1,17 +1,14 @@
 import React from "react";
 
-function Home() {
-	let data = ["title", "url", "timestamp", "score", "authorids"];
-
+function Home({ story }) {
+	console.log("story", story);
 	return (
 		<div>
-			<h1>Hello there!</h1>
-			{<p>{data}</p>}
-			<p>{data.title}</p>
-			<p>{data.url}</p>
-			<p>{data.timestamp}</p>
-			<p>{data.score}</p>
-			<p>{data.authorids}</p>
+			<p>{story?.title}</p>
+			<p>{story?.url}</p>
+			<p>{story?.timestamp}</p>
+			<p>{story?.score}</p>
+			<p>{story?.id}</p>
 		</div>
 	);
 }
