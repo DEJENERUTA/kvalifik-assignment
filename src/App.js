@@ -1,8 +1,7 @@
-import { useEffect } from "react";
 import "./App.css";
 import { useSelector, useDispatch } from "react-redux";
 import { addStories } from "./storiesSlice";
-
+import Home from "./components/Home";
 const getRandomItems = (items) => {
 	const shuffledItems = items.sort(() => 0.5 - Math.random());
 	const selected = shuffledItems.slice(0, 10);
@@ -32,8 +31,14 @@ const App = () => {
 
 	return (
 		<div className="App">
+			<Home />
 			{stories.map((story) => (
-				<div>{story.title}</div>
+				<div>
+					{story.title}
+					{story.rul}
+					{story.timestamp}
+					{story.score}
+				</div>
 			))}
 		</div>
 	);
