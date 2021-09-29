@@ -1,0 +1,16 @@
+.homePage {
+	max-width: 900px;
+	margin: 0 auto;
+	background-color: #85dcb8;
+	color: #fff;
+	padding: 30px;
+}
+h1 {
+	text-align: center;
+	padding: 20px;
+	color: #f64c72;
+}
+span {
+	color: #f64c72;
+	padding: 10px;
+}

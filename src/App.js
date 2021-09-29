@@ -28,7 +28,6 @@ const App = () => {
 				});
 			});
 	}, [dispatch]);
-	console.log("stories", stories);
 
 	return (
 		<div className="App">
