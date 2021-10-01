@@ -21,6 +21,9 @@ function Home({ story }) {
 			<p>
 				<span>id:</span> {story?.id}
 			</p>
+			<p>
+				<span>Author karma score: {story?.by}</span>
+			</p>
 		</div>
 	);
 }

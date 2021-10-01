@@ -4,11 +4,15 @@
 	background-color: #85dcb8;
 	color: #fff;
 	padding: 30px;
+	font-size: 16px;
 }
 h1 {
 	text-align: center;
 	padding: 20px;
 	color: #f64c72;
+}
+.homePage p {
+	font-size: 18px;
 }
 span {
 	color: #f64c72;
