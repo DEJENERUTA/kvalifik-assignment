@@ -2,6 +2,7 @@ import React from "react";
 
 function Home({ story }) {
 	console.log("story", story);
+
 	return (
 		<div className="homePage">
 			<h1>Hacker News top stories</h1>
