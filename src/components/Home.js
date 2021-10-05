@@ -1,8 +1,14 @@
-import React from "react";
+import { useEffect, useState } from "react";
 
 function Home({ story }) {
-	console.log("story", story);
-
+	const [karma, setKarma] = useState("");
+	useEffect(() => {
+		fetch(`https://hacker-news.firebaseio.com/v0/user/${story?.by}.json`)
+			.then((response) => response.json())
+			.then((result) => {
+				setKarma(result.karma);
+			});
+	}, []);
 	return (
 		<div className="homePage">
 			<h1>Hacker News top stories</h1>
@@ -23,7 +29,7 @@ function Home({ story }) {
 				<span>id:</span> {story?.id}
 			</p>
 			<p>
-				<span>Author karma score: {story?.by}</span>
+				<span>Author karma score: {karma}</span>
 			</p>
 		</div>
 	);

@@ -30,14 +30,6 @@ const App = () => {
 			});
 	}, [dispatch]);
 
-	useEffect(() => {
-		fetch("https://hacker-news.firebaseio.com/v0/user/${id}.json")
-			.then((response) => response.json())
-			.then((result) => {
-				console.log(result);
-			});
-	}, []);
-
 	return (
 		<div className="App">
 			{stories.map((story, index) => (
